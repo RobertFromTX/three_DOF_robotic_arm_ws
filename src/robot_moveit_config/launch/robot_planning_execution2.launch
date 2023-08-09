@@ -1,0 +1,38 @@
+<launch>
+  <arg name="load_robot_description" value="true"/>
+  <group ns="/">
+    
+    <arg name="moveit_controller_manager" default="moveit_simple_controller_manager/MoveItSimpleControllerManager" />
+    <param name="moveit_controller_manager" value="$(arg moveit_controller_manager)"/>
+    <!-- <arg name="robot_description" value="C:\Users\robc\ROS\three_DOF_robotic_arm_ws\src\robot_arm_package\urdf\robotic_arm.urdf"/>
+    <arg name="load_robot_description" value="true" /> -->
+    <rosparam command="load" file="$(find robot_moveit_config)/config/joint_names.yaml"/>
+  </group>
+  <!-- <param if="$(arg load_robot_description)" name="$(arg robot_description)" textfile="$(find robot_arm_package)/urdf/robotic_arm.urdf"/> -->
+
+  <include file="$(find robot_moveit_config)/launch/planning_context.launch" >
+    <arg name="load_robot_description" value="true" />
+  </include>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="false"/>
+    <rosparam param="source_list">[arm_controller/joint_states]</rosparam>
+  </node>
+
+  <!-- Given the published joint states, publish tf for the robot links -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+
+  <include file="$(find robot_moveit_config)/launch/move_group.launch">
+    <arg name="publish_monitored_planning_scene" value="true" />
+    <arg name="load_robot_description" value="$(arg load_robot_description)"/>
+  </include>
+
+  <include file="$(find robot_moveit_config)/launch/moveit_rviz.launch">
+    <arg name="rviz_config" value="True"/>
+  </include>
+
+  <!-- added -->
+  <!-- <include file="$(find robot_moveit_config)/launch/ros_controllers.launch" >
+  </include> -->
+
+</launch>

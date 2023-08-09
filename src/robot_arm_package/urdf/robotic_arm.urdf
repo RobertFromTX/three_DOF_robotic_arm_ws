@@ -1,0 +1,323 @@
+<robot name="robot">
+  <!-- -->
+  <!--<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot_arm">-->
+  <!--<xacro:include filename="robot_arm_include.xacro"/>-->
+  <!-- links and joints -->
+  <!-- because rootlink should not have inertia -->
+  <link name="dummy_link"></link>
+  <joint name="dummy_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="dummy_link"/>
+    <child link="bottom_base_link"/>
+  </joint>
+  <!-- empty because it is anchorpoint for world -->
+
+  <link name="bottom_base_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.505"/>
+      <geometry>
+        <cylinder length="1.01" radius="1.75"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0.2 1 0.2 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 1.01"/>
+      <geometry>
+        <cylinder length="2.02" radius="1.75"/>
+      </geometry>
+    </collision>
+    <!-- I have not changed the matrix yet-->
+    <!-- I have not changed the mass yet-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.05"/>
+      <mass value="12"/>
+      <inertia ixx="2.26" ixy="0.0" ixz="0.0" iyy="6.26" iyz="0.0" izz="8.6"/>
+    </inertial>
+
+  </link>
+  <joint name="base_joint" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 1.01"/>
+    <parent link="bottom_base_link"/>
+    <child link="top_base_link"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" lower="0" upper="3.14" velocity="100"/>
+  </joint>
+  <link name="top_base_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.505"/>
+      <geometry>
+        <cylinder length="1.01" radius="1.55"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0.2 1 0.2 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.505"/>
+      <geometry>
+        <cylinder length="2.02" radius="1.55"/>
+      </geometry>
+    </collision>
+    <!-- I have not changed the matrix yet-->
+    <!-- I have not changed the mass yet-->
+    
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.05"/>
+    
+      <mass value="12"/>
+      
+      <inertia ixx="2.26" ixy="0.0" ixz="0.0" iyy="6.26" iyz="0.0" izz="8.6"/>
+    </inertial>
+    
+  </link>
+  <!-- arm segment 1 -->
+  <joint name="arm_segment_1" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 1.01"/>
+    <parent link="top_base_link"/>
+    <child link="arm_segment_1_link"/>
+  </joint>
+  <link name="arm_segment_1_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 1.7"/>
+      <geometry>
+        <box size="1.75 0.75 4"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0.2 1 0.2 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 1.7"/>
+      <geometry>
+        <box size="1.75 0.75 4"/>
+      </geometry>
+    </collision>
+    <!-- I have not changed the matrix yet-->
+    <!-- I have not changed the mass yet-->
+    
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.05"/>
+    
+      <mass value="12"/>
+      
+      <inertia ixx="2.26" ixy="0.0" ixz="0.0" iyy="6.26" iyz="0.0" izz="8.6"/>
+    </inertial>
+    
+  </link>
+  <!-- arm segment 2 -->
+  <joint name="arm_segment_2" type="revolute">
+    <origin rpy="0 0 0" xyz="0 -0.375 3.21"/>
+    <parent link="arm_segment_1_link"/>
+    <child link="arm_segment_2_link"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" lower="0" upper="3.14" velocity="100"/>
+  </joint>
+  <link name="arm_segment_2_link">
+    <visual>
+      <!-- .55 is gap of between links + .175 is half of the width of the arm segment 2-->
+      <origin rpy="0 0 0" xyz="0 -0.725 1"/>
+      <geometry>
+        <box size="1 0.35 4"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0.2 1 0.2 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 -0.725 1"/>
+      <geometry>
+        <box size="1 0.35 4"/>
+      </geometry>
+    </collision>
+    <!-- I have not changed the mass yet-->
+    <!-- I have not changed the matrix yet-->
+    
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 -0.725 1"/>
+
+      <mass value="12"/>
+
+      <inertia ixx="2.26" ixy="0.0" ixz="0.0" iyy="6.26" iyz="0.0" izz="8.6"/>
+    </inertial>
+    
+  </link>
+  <!-- arm segment 3 -->
+  <joint name="arm_segment_3" type="revolute">
+    <origin rpy="0 0 0" xyz="0 -0.55 2.48"/>
+    <parent link="arm_segment_2_link"/>
+    <child link="arm_segment_3_link"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" lower="0" upper="3.14" velocity="100"/>
+  </joint>
+  <link name="arm_segment_3_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0.715 1"/>
+      <geometry>
+        <box size="1 0.35 4"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0.2 1 0.2 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0.715 1"/>
+      <geometry>
+        <box size="1 0.35 4"/>
+      </geometry>
+    </collision>
+    <!-- I have not changed the matrix yet-->
+    <!-- I have not changed the mass yet-->
+    
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0.715 1"/>
+
+      <mass value="12"/>
+
+      <inertia ixx="2.26" ixy="0.0" ixz="0.0" iyy="6.26" iyz="0.0" izz="8.6"/>
+    </inertial>
+    
+  </link>
+  <!-- end of arm -->
+  <joint name="end_of_arm" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0.715 2.48"/>
+    <parent link="arm_segment_3_link"/>
+    <child link="end_of_arm_tool_link"/>
+  </joint>
+  <link name="end_of_arm_tool_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0 0 0"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0.2 1 0.2 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0 0 0"/>
+      </geometry>
+    </collision>
+    <!-- I have not changed the mass yet-->
+    <!-- I have not changed the matrix yet-->
+    
+    <inertial>
+
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+
+      <mass value="12"/>
+
+      <inertia ixx="2.26" ixy="0.0" ixz="0.0" iyy="6.26" iyz="0.0" izz="8.6"/>
+    </inertial>
+    
+  </link>
+  <gazebo reference="bottom_base_link">
+      <material>Gazebo/Green</material>
+  </gazebo>
+
+  <gazebo reference="top_base_link">
+      <material>Gazebo/Green</material>
+  </gazebo>
+  
+  <gazebo reference="arm_segment_1_link">
+      <material>Gazebo/Green</material>
+  </gazebo>
+
+  <gazebo reference="arm_segment_2_link">
+      <material>Gazebo/Green</material>
+  </gazebo>
+
+  <gazebo reference="arm_segment_3_link">
+      <material>Gazebo/Green</material>
+  </gazebo>
+
+  <!-- make gazebo control robot -->
+
+  <!-- <gazebo>
+    <plugin name="gazebo_ros_joint_state_publisher" filename = "gazebo_ros_joint_state_publisher.so">
+      <updateRate>20</updateRate>
+      <jointName>base_joint, arm_segment_2, arm_segment_3</jointName>
+      <alwaysOn>true</alwaysOn>
+    </plugin>
+  </gazebo> -->
+
+
+  <!--camera-->
+  <joint name="camera_optical_joint" type="fixed">
+    <origin rpy="1.571 -1.571 -1.571" xyz="-1 0 -0.3"/>
+    <parent link="end_of_arm_tool_link"/>
+    <child link="camera_link_optical"/>
+  </joint>
+  <link name="camera_link_optical"></link>
+  
+  <gazebo reference="camera_link_optical">
+    <!-- changed sensor type from depth to camera -->
+    <sensor type="camera" name="my_camera">
+      <update_rate>20</update_rate>
+      <visualize>true</visualize>
+      <camera name="cam">
+        <horizontal_fov>1.3962634</horizontal_fov>
+      <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8B8G8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="gazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <frameName>camera_link_optical</frameName>
+        <minDepth>0.1</minDepth>
+        <maxDepth>500</maxDepth>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="gazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="base_joint">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="arm_segment_2">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="arm_segment_3">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+</robot>

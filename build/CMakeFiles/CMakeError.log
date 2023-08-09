@@ -1,0 +1,72 @@
+Determining if the include file pthread.h exists failed with the following output:
+Change Dir: C:/Users/robc/ROS/three_DOF_robotic_arm_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_ae3bc\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\nmake.exe"  -f CMakeFiles\cmTC_ae3bc.dir\build.make /nologo -L                  CMakeFiles\cmTC_ae3bc.dir\build
+Building C object CMakeFiles/cmTC_ae3bc.dir/CheckIncludeFile.c.obj
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\cl.exe @C:\Users\robc\AppData\Local\Temp\nm3ACA.tmp
+CheckIncludeFile.c
+C:\Users\robc\ROS\three_DOF_robotic_arm_ws\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory
+NMAKE : fatal error U1077: 'C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\cl.exe' : return code '0x2'
+Stop.
+NMAKE : fatal error U1077: '"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\nmake.exe"' : return code '0x2'
+Stop.
+
+
+
+Determining if the function sgemm_ exists failed with the following output:
+Change Dir: C:/Users/robc/ROS/three_DOF_robotic_arm_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_f2060\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\nmake.exe"  -f CMakeFiles\cmTC_f2060.dir\build.make /nologo -L                  CMakeFiles\cmTC_f2060.dir\build
+Building C object CMakeFiles/cmTC_f2060.dir/CheckFunctionExists.c.obj
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\cl.exe @C:\Users\robc\AppData\Local\Temp\nmAF74.tmp
+CheckFunctionExists.c
+Linking C executable cmTC_f2060.exe
+	C:\opt\ros\melodic\x64\lib\site-packages\cmake\data\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_f2060.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests -- C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_f2060.dir\objects1.rsp @C:\Users\robc\AppData\Local\Temp\nmB179.tmp
+LINK Pass 1: command "C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_f2060.dir\objects1.rsp /out:cmTC_f2060.exe /implib:cmTC_f2060.lib /pdb:C:\Users\robc\ROS\three_DOF_robotic_arm_ws\build\CMakeFiles\CMakeTmp\cmTC_f2060.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\cmTC_f2060.dir/intermediate.manifest CMakeFiles\cmTC_f2060.dir/manifest.res" failed (exit code 1120) with the following output:
+CheckFunctionExists.c.obj : error LNK2019: unresolved external symbol sgemm_ referenced in function main
+cmTC_f2060.exe : fatal error LNK1120: 1 unresolved externals
+NMAKE : fatal error U1077: 'C:\opt\ros\melodic\x64\lib\site-packages\cmake\data\bin\cmake.exe' : return code '0xffffffff'
+Stop.
+NMAKE : fatal error U1077: '"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\nmake.exe"' : return code '0x2'
+Stop.
+
+
+
+Determining if the function cheev_ exists failed with the following output:
+Change Dir: C:/Users/robc/ROS/three_DOF_robotic_arm_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_63ad0\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\nmake.exe"  -f CMakeFiles\cmTC_63ad0.dir\build.make /nologo -L                  CMakeFiles\cmTC_63ad0.dir\build
+Building C object CMakeFiles/cmTC_63ad0.dir/CheckFunctionExists.c.obj
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\cl.exe @C:\Users\robc\AppData\Local\Temp\nmB3F9.tmp
+CheckFunctionExists.c
+Linking C executable cmTC_63ad0.exe
+	C:\opt\ros\melodic\x64\lib\site-packages\cmake\data\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_63ad0.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests -- C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_63ad0.dir\objects1.rsp @C:\Users\robc\AppData\Local\Temp\nmB428.tmp
+LINK Pass 1: command "C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_63ad0.dir\objects1.rsp /out:cmTC_63ad0.exe /implib:cmTC_63ad0.lib /pdb:C:\Users\robc\ROS\three_DOF_robotic_arm_ws\build\CMakeFiles\CMakeTmp\cmTC_63ad0.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console C:\opt\ros\melodic\x64\lib\openblas.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\cmTC_63ad0.dir/intermediate.manifest CMakeFiles\cmTC_63ad0.dir/manifest.res" failed (exit code 1120) with the following output:
+CheckFunctionExists.c.obj : error LNK2019: unresolved external symbol cheev_ referenced in function main
+cmTC_63ad0.exe : fatal error LNK1120: 1 unresolved externals
+NMAKE : fatal error U1077: 'C:\opt\ros\melodic\x64\lib\site-packages\cmake\data\bin\cmake.exe' : return code '0xffffffff'
+Stop.
+NMAKE : fatal error U1077: '"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\nmake.exe"' : return code '0x2'
+Stop.
+
+
+
+Determining if the function cheev_ exists failed with the following output:
+Change Dir: C:/Users/robc/ROS/three_DOF_robotic_arm_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_3b736\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\nmake.exe"  -f CMakeFiles\cmTC_3b736.dir\build.make /nologo -L                  CMakeFiles\cmTC_3b736.dir\build
+Building C object CMakeFiles/cmTC_3b736.dir/CheckFunctionExists.c.obj
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\cl.exe @C:\Users\robc\AppData\Local\Temp\nmB4C4.tmp
+CheckFunctionExists.c
+Linking C executable cmTC_3b736.exe
+	C:\opt\ros\melodic\x64\lib\site-packages\cmake\data\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_3b736.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests -- C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_3b736.dir\objects1.rsp @C:\Users\robc\AppData\Local\Temp\nmB4F4.tmp
+LINK Pass 1: command "C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_3b736.dir\objects1.rsp /out:cmTC_3b736.exe /implib:cmTC_3b736.lib /pdb:C:\Users\robc\ROS\three_DOF_robotic_arm_ws\build\CMakeFiles\CMakeTmp\cmTC_3b736.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console C:\opt\ros\melodic\x64\lib\openblas.lib C:\opt\ros\melodic\x64\lib\openblas.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\cmTC_3b736.dir/intermediate.manifest CMakeFiles\cmTC_3b736.dir/manifest.res" failed (exit code 1120) with the following output:
+CheckFunctionExists.c.obj : error LNK2019: unresolved external symbol cheev_ referenced in function main
+cmTC_3b736.exe : fatal error LNK1120: 1 unresolved externals
+NMAKE : fatal error U1077: 'C:\opt\ros\melodic\x64\lib\site-packages\cmake\data\bin\cmake.exe' : return code '0xffffffff'
+Stop.
+NMAKE : fatal error U1077: '"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\nmake.exe"' : return code '0x2'
+Stop.
+
+
+

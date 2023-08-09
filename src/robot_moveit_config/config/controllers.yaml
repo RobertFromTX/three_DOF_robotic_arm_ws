@@ -1,0 +1,10 @@
+controller_list:
+  #I changed robot_arm_controller to arm_controller
+  - name: arm_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - base_joint
+      - arm_segment_2
+      - arm_segment_3

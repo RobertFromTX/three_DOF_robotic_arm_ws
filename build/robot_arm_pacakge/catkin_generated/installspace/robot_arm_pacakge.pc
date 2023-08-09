@@ -1,0 +1,8 @@
+prefix=C:/Users/robc/ROS/three_DOF_robotic_arm_ws/install
+
+Name: robot_arm_pacakge
+Description: Description of robot_arm_pacakge
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

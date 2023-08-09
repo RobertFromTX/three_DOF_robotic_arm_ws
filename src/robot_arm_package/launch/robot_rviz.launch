@@ -1,0 +1,17 @@
+<launch>
+    <!-- values passed by command line input-->
+    <arg name="model"/>
+    <arg name="gui" default="False" />
+    <!-- set these parameters on parameter server-->
+    <!--<param name="robot_description" textfile="$(find robot_arm_package)/urdf/$(arg model)" /> -->
+    <param name="robot_description" command="$(find xacro)/xacro $(find robot_arm_package)/urdf/$(arg model)" />
+    <param name="use_gui" value="$(arg gui)" />
+
+    <!-- start 3 nodes: joint_state_publisher, robot_state_publisher, and rviz-->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type ="joint_state_publisher">
+        <param name="use_gui" value="True"/>
+    </node>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type ="state_publisher" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_arm_package)/urdf.rviz" required="true" />
+    <!-- required = true makes so that if rviz dies entire roslaunch is killed-->
+</launch>

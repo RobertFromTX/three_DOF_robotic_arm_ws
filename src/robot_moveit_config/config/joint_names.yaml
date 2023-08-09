@@ -1,0 +1,4 @@
+controller_joint_names: 
+  -base_joint
+  -arm_segment_2
+  -arm_segment_3

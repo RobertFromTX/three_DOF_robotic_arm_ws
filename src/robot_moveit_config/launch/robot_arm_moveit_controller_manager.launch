@@ -1,0 +1,8 @@
+<launch>
+ <!-- Set the param that trajectory_execution_manager needs to find the controller plugin -->
+ <arg name="moveit_controller_manager" default="moveit_simple_controller_manager/MoveItSimpleControllerManager" />
+ <param name="moveit_controller_manager" value="$(arg moveit_controller_manager)"/>
+ <!-- load controller_list -->
+ <rosparam file="$(find robot_moveit_config)/config/controllers.yaml" command="load"/>
+ <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn arm_controller" respawn="false" output="screen"/>
+</launch>
